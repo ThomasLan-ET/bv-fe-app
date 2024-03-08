@@ -15,7 +15,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build imagename
+           sh ''
         }
       }
     }
@@ -33,7 +33,6 @@ pipeline {
       steps{
         sh "docker rmi $imagename:$BUILD_NUMBER"
          sh "docker rmi $imagename:latest"
- 
       }
     }
   }
